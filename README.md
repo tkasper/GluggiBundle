@@ -54,3 +54,19 @@ Usage
 Create a `LayoutBundle` and load it in your `AppKernel`.
 
 You can add your views in `LayoutBundle/Resources/views/{atom,molecule,organism,template,page}`.
+
+### Include a view
+`{{ gluggi(type, name, context) }}`
+
+| Parameter       | Description |
+| --------------- | ----------- |
+| `type`          | The type is one of the following: `atom`, `molecule`, `organism`, `template`, `page` |
+| `name`          | The view files will be saved as *.html.twig. In the name parameter you only have to type the name without the suffix |
+| `context`       | The context is an array of additional parameters you want to pass to the view. |
+
+#### Example
+```twig
+{{ gluggi("atom", "my-atom", {headline: "Hello World"} }}
+```
+
+The example includes an atom, its filename is my-atom.html.twig and we have passed an additional parameter headline „Hello World“ to the view. 
